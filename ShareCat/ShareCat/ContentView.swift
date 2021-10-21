@@ -7,11 +7,19 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView: View {
     var body: some View {
         Text("Hello, world!")
             .padding()
     }
+    
+    /*VStack(alignment: .leading){
+        Button("Home"){
+        
+        }
+    
+    }
+     */
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -19,3 +27,9 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+/*struct Main_Menu: View {
+    var home_button:
+
+}
+ */
