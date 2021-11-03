@@ -9,22 +9,35 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        
         NavigationView {
-            NavigationLink(destination: Text("Calendar Page")) {
-            Text("Calendar")
-                .padding()
-                .navigationBarTitle("Home", displayMode: .large)
-                VStack(alignment: .leading){
-                    NavigationLink(destination: Text("Map Page")) {
-                        Text("Map")
-                    }
-                    NavigationLink(destination: Text("Campus Resources Page")) {
-                        Text("Campus Resources")
-                    }
-                    NavigationLink(destination: Text("Clubs Page")) {
-                        Text("Clubs")
+            
+                
+            ZStack {
+                Color.gray.ignoresSafeArea()
+                VStack{
+                    RoundedRectangle(cornerRadius: 25)
+                        .fill(Color.red)
+                        .frame(width: 150, height: 100)
+                
+                NavigationLink(destination: Text("Calendar Page")) {
+                Text("Calendar")
+                    .padding()
+                    .navigationBarTitle("Home", displayMode: .large)
+                    VStack(alignment: .leading){
+                        NavigationLink(destination: Text("Map Page")) {
+                            Text("Map")
+                        }
+                        NavigationLink(destination: Text("Campus Resources Page")) {
+                            Text("Campus Resources")
+                        }
+                        NavigationLink(destination: Text("Clubs Page")) {
+                            Text("Clubs")
+                        }
+                       
                     }
                 }
+                }//end VStack
             }
         }//end nav view
     }//end body
