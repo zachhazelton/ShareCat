@@ -12,36 +12,55 @@ struct ContentView: View {
         
         NavigationView {
             
-                
+            
             ZStack {
                 Color.gray.ignoresSafeArea()
-                VStack{
-                    RoundedRectangle(cornerRadius: 25)
-                        .fill(Color.red)
-                        .frame(width: 150, height: 100)
-                
-                NavigationLink(destination: Text("Calendar Page")) {
-                Text("Calendar")
-                    .padding()
-                    .navigationBarTitle("Home", displayMode: .large)
-                    VStack(alignment: .leading){
-                        NavigationLink(destination: Text("Map Page")) {
-                            Text("Map")
-                        }
-                        NavigationLink(destination: Text("Campus Resources Page")) {
-                            Text("Campus Resources")
-                        }
-                        NavigationLink(destination: Text("Clubs Page")) {
-                            Text("Clubs")
-                        }
-                       
-                    }
-                }
-                }//end VStack
-            }
+        //VStack{
+                //NavigationLink(destination: Text("Calendar Page")) {
+                    //Text("Calendar")
+                      //  .padding()
+                     //   .navigationBarTitle("Home", displayMode: .large)
+                        
+                VStack(alignment: .leading){
+                    
+                            NavigationLink(destination: Text("Calendar Page"), label: {
+                                Text("Calendar")
+                                    .bold()
+                                    .frame(width: 300, height: 100)
+                                    .background(Color.red)
+                                    .foregroundColor(.white)
+                                    .navigationBarTitle("ShareCat", displayMode: .large)
+                                    
+                            })
+                            NavigationLink(destination: Text("Map Page"), label: {
+                                Text("Map")
+                                    .bold()
+                                    .frame(width: 300, height: 100 )
+                                    .background(Color.black)
+                                    .foregroundColor(.white)
+                            })
+                           
+                            NavigationLink(destination: Text("Clubs Page"), label:  {
+                                Text("Clubs")
+                                    .bold()
+                                    .frame(width: 300, height: 100)
+                                    .background(Color.black)
+                                    .foregroundColor(.white)
+                            })
+                        NavigationLink(destination: Text("Campus Resources Page"), label:  {
+                                Text("Campus Resources")
+                                    .bold()
+                                    .frame(width: 300, height: 100)
+                                    .background(Color.red)
+                                    .foregroundColor(.white)
+                    })
+                        }//end second v stack
+                    //end of nav link calender 1 I took the "}" out
+                //end VStack i took "}" out
+            } //end z stack
         }//end nav view
     }//end body
-
+    
 }//end view
 
 
