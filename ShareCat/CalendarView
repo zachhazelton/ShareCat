@@ -41,20 +41,3 @@ extension CalendarViewDataSource {
     func headerString(_ date: Date) -> String? {
         return nil
     }
-}
-
-public protocol CalendarViewDelegate {
-    
-    func calendar(_ calendar : CalendarView, didScrollToMonth date : Date) -> Void
-    func calendar(_ calendar : CalendarView, didSelectDate date : Date, withEvents events: [CalendarEvent]) -> Void
-    /* optional */
-    func calendar(_ calendar : CalendarView, canSelectDate date : Date) -> Bool
-    func calendar(_ calendar : CalendarView, didDeselectDate date : Date) -> Void
-    func calendar(_ calendar : CalendarView, didLongPressDate date : Date, withEvents events: [CalendarEvent]?) -> Void
-}
-
-extension CalendarViewDelegate {
-    func calendar(_ calendar : CalendarView, canSelectDate date : Date) -> Bool { return true }
-    func calendar(_ calendar : CalendarView, didDeselectDate date : Date) -> Void { return }
-    func calendar(_ calendar : CalendarView, didLongPressDate date : Date, withEvents events: [CalendarEvent]?) -> Void { return }
-}
