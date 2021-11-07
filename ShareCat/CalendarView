@@ -1,0 +1,60 @@
+//
+//  CalendarView.swift
+//  ShareCat
+//
+//  Created by Dubem Okafor on 11/7/21.
+//
+//
+
+import UIKit
+import EventKit
+
+
+public struct CalendarEvent {
+    public let title: String
+    public let startDate: Date
+    public let endDate:Date
+    
+    public init(title: String, startDate: Date, endDate: Date) {
+        self.title = title;
+        self.startDate = startDate;
+        self.endDate = endDate;
+    }
+}
+
+public protocol CalendarViewDataSource {
+    func startDate() -> Date
+    func endDate() -> Date
+    /* optional */
+    func headerString(_ date: Date) -> String?
+}
+
+extension CalendarViewDataSource {
+    
+    func startDate() -> Date {
+        return Date()
+    }
+    func endDate() -> Date {
+        return Date()
+    }
+    
+    func headerString(_ date: Date) -> String? {
+        return nil
+    }
+}
+
+public protocol CalendarViewDelegate {
+    
+    func calendar(_ calendar : CalendarView, didScrollToMonth date : Date) -> Void
+    func calendar(_ calendar : CalendarView, didSelectDate date : Date, withEvents events: [CalendarEvent]) -> Void
+    /* optional */
+    func calendar(_ calendar : CalendarView, canSelectDate date : Date) -> Bool
+    func calendar(_ calendar : CalendarView, didDeselectDate date : Date) -> Void
+    func calendar(_ calendar : CalendarView, didLongPressDate date : Date, withEvents events: [CalendarEvent]?) -> Void
+}
+
+extension CalendarViewDelegate {
+    func calendar(_ calendar : CalendarView, canSelectDate date : Date) -> Bool { return true }
+    func calendar(_ calendar : CalendarView, didDeselectDate date : Date) -> Void { return }
+    func calendar(_ calendar : CalendarView, didLongPressDate date : Date, withEvents events: [CalendarEvent]?) -> Void { return }
+}
