@@ -41,7 +41,7 @@ struct ContentView: View {
                                     .foregroundColor(.white)
                                     .cornerRadius(15.0)                            })
                            
-                    NavigationLink(destination: LoginView(), label:  {
+                    NavigationLink(destination: ClubsView(), label:  {
                                 Text("Clubs")
                                     .bold()
                                     .frame(width: 300, height: 100)
@@ -72,7 +72,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         
-        ContentView()
+        LoginView()
     }
 }
 
@@ -110,10 +110,11 @@ struct MapView: View{
 struct LoginView: View{
     @State private var username: String = ""
     @State private var password: String = ""
+    @State var authenticated: Bool = false
     
     var body: some View{
         
-                
+        if !authenticated{
         VStack{
            
             Text("Login")
@@ -130,33 +131,30 @@ struct LoginView: View{
                 SecureField("Password", text: $password)
             }
             HStack{
-                /*Button(action: {print("Login Successful")}){
+                Button(action: {self.authenticated = true
+    
+                }){
                 Text("LOGIN")
                 .foregroundColor(.white)
                 .padding()
                 .frame(width: 220, height: 60)
                 .background(Color.red)
                 .cornerRadius(15.0)            }
-                */
-                NavigationView{
-                    NavigationLink(destination: ClubsView(), label:{
-                        Text("Login")
-                            .bold()
-                            .frame(width: 300, height: 100)
-                            .background(Color.black)
-                            .foregroundColor(.white)
-                            .cornerRadius(15.0)
-                    
-                    })
+                
+                
                     
                 }//end nav view
                     }
-                
-            
-    }
+        }//end if
+        
+        else{
+            ContentView()
+        }
+
+        }
         
 }
-}
+
 
 
 
