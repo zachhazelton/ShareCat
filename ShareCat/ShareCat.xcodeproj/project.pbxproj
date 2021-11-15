@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		288B235C2743213500FF80F6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288B235B2743213500FF80F6 /* MapView.swift */; };
 		560A07042720E85700D53B38 /* ShareCatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560A07032720E85700D53B38 /* ShareCatApp.swift */; };
 		560A07062720E85700D53B38 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560A07052720E85700D53B38 /* ContentView.swift */; };
 		560A07082720E85900D53B38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 560A07072720E85900D53B38 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		288B235B2743213500FF80F6 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapView.swift; path = "../../../../Downloads/ShareCat-Rozierjn-Map-Testing/ShareCat/MapView.swift"; sourceTree = "<group>"; };
 		560A07002720E85700D53B38 /* ShareCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		560A07032720E85700D53B38 /* ShareCatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCatApp.swift; sourceTree = "<group>"; };
 		560A07052720E85700D53B38 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				560A07032720E85700D53B38 /* ShareCatApp.swift */,
 				560A07052720E85700D53B38 /* ContentView.swift */,
+				288B235B2743213500FF80F6 /* MapView.swift */,
 				560A07072720E85900D53B38 /* Assets.xcassets */,
 				560A07092720E85900D53B38 /* Preview Content */,
 			);
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				560A07062720E85700D53B38 /* ContentView.swift in Sources */,
+				288B235C2743213500FF80F6 /* MapView.swift in Sources */,
 				560A07042720E85700D53B38 /* ShareCatApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

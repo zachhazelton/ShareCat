@@ -93,7 +93,48 @@ struct ClubsView: View{
 
 struct CalendarView: View{
     var body: some View{
-        Text("This is the Calendar View")
+        Text("This struct CalendarView: View{
+             var body: some View{
+
+         struct EventLocation {
+             let title: String
+             let latitude: Double
+             let longitude: Double
+         }
+
+         struct CalendarEvent {
+             public let title: String
+             public let startDate: Date
+             public let endDate:Date
+             
+             public init(title: String, startDate: Date, endDate: Date) {
+                 self.title = title;
+                 self.startDate = startDate;
+                 self.endDate = endDate;
+             }
+         }
+
+         protocol CalendarViewDataSource {
+             func startDate() -> Date
+             func endDate() -> Date
+             /* optional */
+             func headerString(_ date: Date) -> String?
+         }
+
+         extension CalendarViewDataSource {
+             
+             func startDate() -> Date {
+                 return Date()
+             }
+             func endDate() -> Date {
+                 return Date()
+             }
+             
+             func headerString(_ date: Date) -> String? {
+                 return nil
+             }
+             }
+        }")
     }
 }
 
@@ -149,7 +190,28 @@ struct ResourcesView: View{
 struct MapView: View{
     var body: some View{
        // import SwiftUI
-        Text("this is the maps view")
+        Text("this is the maps view
+             struct MapView: View{
+             var body: some View{
+                 
+         struct ContentView: View {
+             
+             @State private var region = MKCoordinateRegion(
+                 center: CLLocationCoordinate2D(latitude: 39.1329, longitude: 84.51),
+                 span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+
+             var body: some View {
+                 Map(coordinateRegion:$region)
+             }
+         }
+         struct ContentView_Previews: PreviewProvider {
+                     static var previews: some View {
+                         ContentView()
+             }
+         }
+             }
+         }
+)
         
         //past map view code here
     }
