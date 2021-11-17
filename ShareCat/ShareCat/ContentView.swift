@@ -26,13 +26,21 @@ struct ContentView: View {
                         
                 VStack(alignment: .leading){
                     
+                    Text("ShareCat")
+                        .bold()
+                        .font(.system(size: 30))
+                        .frame(width: 300, height: 30)
+                        .foregroundColor(.red)
+                        .background(Color.white)
+                        .cornerRadius(15.0)
+                    
+                    
                     NavigationLink(destination: CalendarView(), label: {
                                 Text("Calendar")
                                     .bold()
                                     .frame(width: 300, height: 100)
                                     .background(Color.red)
                                     .foregroundColor(.white)
-                                    .navigationBarTitle("ShareCat", displayMode: .large)
                                     .cornerRadius(15.0)
                             })
                             NavigationLink(destination: MapView(), label: {
@@ -141,8 +149,60 @@ extension CalendarViewDataSource {
 
 struct ResourcesView: View{
     var body: some View{
-        Text("This is the resources view")
+        ZStack{
+            Color.black.ignoresSafeArea()
+        VStack(alignment: .leading){
         
+            Text("Campus Resources")
+                .bold()
+                .font(.system(size: 30))
+                .foregroundColor(.red)
+                .frame(width: 300, height: 55)
+                .background(Color.white)
+            
+            Link("One Stop", destination: URL(string: "https://onestop.uc.edu")!)
+            .font(.title)
+            .foregroundColor(.white)
+            .frame(width: 300, height: 50)
+            .background(Color.red)
+            
+            Link("Accessibility Resources", destination: URL(string: "https://www.uc.edu/campus-life/accessibility-resources.html")!)
+            .font(.title)
+            .foregroundColor(.white)
+            .frame(width: 300, height: 50)
+            .background(Color.red)
+            
+            Link("UC Public Safety", destination: URL(string: "https://www.uc.edu/about/publicsafety.html")!)
+            .font(.title)
+            .foregroundColor(.white)
+            .frame(width: 300, height: 50)
+            .background(Color.red)
+            
+            Link("UC Campus Rec", destination: URL(string: "https://www.uc.edu/campus-life/campus-rec.html")!)
+            .font(.title)
+            .foregroundColor(.white)
+            .frame(width: 300, height: 50)
+            .background(Color.red)
+            
+            Link("UC Health Services", destination: URL(string: "https://www.med.uc.edu/landing-pages/university-health/home")!)
+            .font(.title)
+            .foregroundColor(.white)
+            .frame(width: 300, height: 50)
+            .background(Color.red)
+            
+            Link("UC Nightride", destination: URL(string: "https://www.uc.edu/about/publicsafety/services/night-ride.html")!)
+            .font(.title)
+            .foregroundColor(.white)
+            .frame(width: 300, height: 50)
+            .background(Color.red)
+            
+            Link("Bearcat Card", destination: URL(string: "https://www.uc.edu/bearcatcard.html")!)
+            .font(.title)
+            .foregroundColor(.white)
+            .frame(width: 300, height: 50)
+            .background(Color.red)
+        }
+        }
     }
 }
 
