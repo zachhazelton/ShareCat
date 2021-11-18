@@ -19,6 +19,8 @@
 		56F565F02745E81F004C287C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F565EF2745E81F004C287C /* MapView.swift */; };
 		56F565F22745E853004C287C /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F565F12745E853004C287C /* CalendarView.swift */; };
 		56F565F42745E87D004C287C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F565F32745E87D004C287C /* LoginView.swift */; };
+		56F565F62745EAA5004C287C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56F565F52745EAA5004C287C /* Main.storyboard */; };
+		56F565FC274698B4004C287C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F565F92746989A004C287C /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		56F565EF2745E81F004C287C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		56F565F12745E853004C287C /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		56F565F32745E87D004C287C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		56F565F52745EAA5004C287C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		56F565F92746989A004C287C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,12 +109,14 @@
 			isa = PBXGroup;
 			children = (
 				560A07032720E85700D53B38 /* ShareCatApp.swift */,
+				56F565F52745EAA5004C287C /* Main.storyboard */,
 				560A07052720E85700D53B38 /* ContentView.swift */,
 				56F565F32745E87D004C287C /* LoginView.swift */,
 				56F565EB27449E5B004C287C /* ClubsView.swift */,
 				56F565ED2745E7E0004C287C /* ResourcesView.swift */,
 				56F565EF2745E81F004C287C /* MapView.swift */,
 				56F565F12745E853004C287C /* CalendarView.swift */,
+				56F565F92746989A004C287C /* LoginViewController.swift */,
 				560A07072720E85900D53B38 /* Assets.xcassets */,
 				560A07092720E85900D53B38 /* Preview Content */,
 			);
@@ -246,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56F565F62745EAA5004C287C /* Main.storyboard in Resources */,
 				560A070B2720E85900D53B38 /* Preview Assets.xcassets in Resources */,
 				560A07082720E85900D53B38 /* Assets.xcassets in Resources */,
 			);
@@ -276,6 +283,7 @@
 				56F565F42745E87D004C287C /* LoginView.swift in Sources */,
 				560A07062720E85700D53B38 /* ContentView.swift in Sources */,
 				56F565F22745E853004C287C /* CalendarView.swift in Sources */,
+				56F565FC274698B4004C287C /* LoginViewController.swift in Sources */,
 				56F565F02745E81F004C287C /* MapView.swift in Sources */,
 				56F565EC27449E5B004C287C /* ClubsView.swift in Sources */,
 				560A07042720E85700D53B38 /* ShareCatApp.swift in Sources */,

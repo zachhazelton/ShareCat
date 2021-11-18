@@ -18,6 +18,10 @@ import EventKit
 struct LoginView: View{
     @State private var username: String = ""
     @State private var password: String = ""
+    @State private var adminusername: String = "ADMIN"
+    @State private var adminpassword: String = "ADMIN"
+    @State private var authenticationfailed: Bool = false
+    
     @State var authenticated: Bool = false
     
     var body: some View{
@@ -38,9 +42,15 @@ struct LoginView: View{
                 Image(systemName: "lock")
                 SecureField("Password", text: $password)
             }
+            //Spacer()
             HStack{
-                Button(action: {self.authenticated = true
-    
+                Button(action: {
+                    if username == adminusername && password == adminpassword{
+                    self.authenticated = true
+                    }
+                    else{
+                        authenticationfailed = true
+                        }
                 }){
                 Text("LOGIN")
                 .foregroundColor(.white)
@@ -51,8 +61,15 @@ struct LoginView: View{
                 
                 
                     
-                }//end nav view
+                }
+            //Spacer()
+            if authenticationfailed{
+                Text("Username and password combination not found. Please try again.")
+                    .foregroundColor(.red)
+                    .padding()
+                    //.bold()
                     }
+        }
         }//end if
         
         else{

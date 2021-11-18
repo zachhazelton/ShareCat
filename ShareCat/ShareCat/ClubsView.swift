@@ -33,8 +33,10 @@ struct ClubsView: View{
                 
                 
             }
+            
+        }//end nav view
         
-        }
+        .offset(y: -50)
     
     }
 }//end view

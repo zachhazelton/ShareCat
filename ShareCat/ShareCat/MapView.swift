@@ -13,9 +13,8 @@ import EventKit
 
 struct MapView: View{
     var body: some View{
-       // import SwiftUI
+       
         Text("this is the maps view")
         
-        //past map view code here
-    }
+            }
 }

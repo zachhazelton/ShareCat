@@ -75,6 +75,7 @@ struct ResourcesView: View{
             .background(Color.red)
             .cornerRadius(15.0)
         }
+            .offset(y:-5)
         }
     }
 }
