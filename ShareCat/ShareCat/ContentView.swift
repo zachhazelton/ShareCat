@@ -57,7 +57,8 @@ struct ContentView: View {
                                     .foregroundColor(.white)
                                     .cornerRadius(15.0)
                             })
-                            NavigationLink(destination: MapView(), label: {
+                            NavigationLink(destination: MapView()
+                                            .edgesIgnoringSafeArea(.all), label: {
                                 Text("Map")
                                     .bold()
                                     .frame(width: 300, height: 100 )
