@@ -50,7 +50,7 @@ struct ContentView: View {
                     //Spacer()
                     
                     NavigationLink(destination: CalendarView(), label: {
-                                Text("Calendar")
+                        Text("Calendar")
                                     .bold()
                                     .frame(width: 300, height: 100)
                                     .background(Color.red)

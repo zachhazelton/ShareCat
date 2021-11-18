@@ -16,7 +16,7 @@ struct ResourcesView: View{
     var body: some View{
         ZStack{
             Color.black.ignoresSafeArea()
-            VStack(alignment: .leading){
+            ScrollView{
         
             Text("Campus Resources")
                 .bold()
@@ -75,7 +75,7 @@ struct ResourcesView: View{
             .background(Color.red)
             .cornerRadius(15.0)
         }
-            .offset(y:-5)
+            //.offset(y:-5)
         }
     }
 }

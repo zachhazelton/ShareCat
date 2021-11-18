@@ -12,32 +12,37 @@ import UIKit
 import EventKit
 
 struct ClubsView: View{
-   
+    
     
     var body: some View{
         //Text("This is the clubs view")
-       //Text("This is the clubs view")
-     
-        NavigationView{
-            VStack{
-                
-                NavigationLink(destination: MyClubsView(), label: {
-                    Text("My Clubs")
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .frame(width: 300, height: 50)
-                        .background(Color.red)
-                        .cornerRadius(15.0)
-                })
-                
-                
-                
-            }
-            
-        }//end nav view
+        //Text("This is the clubs view")
         
-        .offset(y: -50)
-    
+        VStack{
+            
+            Text("Clubs")
+                .bold()
+                .font(.system(size: 30))
+                .foregroundColor(.white)
+                .frame(width: 300, height: 55)
+                .background(Color.red)
+                .cornerRadius(15.0)
+            
+            NavigationLink(destination: MyClubsView(), label: {
+                Text("My Clubs")
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .frame(width: 300, height: 50)
+                    .background(Color.red)
+                    .cornerRadius(15.0)
+            })
+            
+            
+            
+        }
+        
+        
+        
     }
 }//end view
 
@@ -53,3 +58,4 @@ struct MyClubsView: View{
     }
     
 }
+
