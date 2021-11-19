@@ -37,6 +37,11 @@ struct ClubsView: View{
                     .cornerRadius(15.0)
             })
             
+            UITableView{
+                
+                
+            }
+            
             
             
         }

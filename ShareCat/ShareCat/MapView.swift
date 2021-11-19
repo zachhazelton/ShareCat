@@ -21,5 +21,15 @@ struct MapView: View{
             Map(coordinateRegion:$region)
         }
         
+            
+    }
+    
+    func updateUIView(_ uiView: UIView, context: Context) {
+        // do nothing
+    }
+    
+   
+    
+    
 
 }
