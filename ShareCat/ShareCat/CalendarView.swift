@@ -12,48 +12,52 @@ import UIKit
 import EventKit
 
 
-struct CalendarView: View{
-    var body: some View{
-        
-        
-        /*struct EventLocation {
-            let title: String
-            let latitude: Double
-            let longitude: Double
+import DeadSimpleCalendar
+
+// makeMockData() creates random number of events through provided year -> 2021
+// number of events for day will change highlighting of cell
+let mockEvents = DeadSimpleCalendar.makeMockData()
+    
+struct YourDeadSimpleCalendarView: View {
+    
+    
+    // selected date (when user taps on date)
+    @State private var selectedDate: Date = Date()
+    
+    // selected month index (0 -> Jan, 11 -> Dec)
+    @State private var selectedMonth: Int = 0
+    
+    var body: some View {
+        VStack{
+            CalendarView(
+                getEventsNumber: { date in
+                    guard date != nil else { return 0 }
+
+                    if let item = mockEvents[date!] {
+                        return item
+                    }
+                    
+                    return 0
+                },
+                perform: { d in
+                    selectedDate = d
+                },
+                monthChanged: { month in
+                    // can be used to update viewModel to query data for selected month
+                    selectedMonth = month
+                }
+            )
+            VStack(spacing: 5){
+                Text("Selected month index: \(selectedMonth)")
+                if #available(iOS 15.0, *) {
+                    Text("Selected date: \(selectedDate.ISO8601Format())")
+                } else {
+                    // Fallback on earlier versions
+                }
+            }.padding()
+            Spacer()
         }
-        
-        public struct CalendarEvent {
-            public let title: String
-            public let startDate: Date
-            public let endDate:Date
-            
-            public init(title: String, startDate: Date, endDate: Date) {
-                self.title = title;
-                self.startDate = startDate;
-                self.endDate = endDate;
-            }
-        }
-        
-        public protocol CalendarViewDataSource {
-            func startDate() -> Date
-            func endDate() -> Date
-            /* optional */
-            func headerString(_ date: Date) -> String?
-        }
-        
-        extension CalendarViewDataSource {
-            
-            func startDate() -> Date {
-                return Date()
-            }
-            func endDate() -> Date {
-                return Date()
-            }
-            
-            func headerString(_ date: Date) -> String? {
-                return nil
-            }
-        }*/
-        Text("We need to fix this")
     }
 }
+    
+

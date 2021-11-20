@@ -5,10 +5,12 @@
 //  Created by Zachary Hazelton on 10/20/21.
 //
 
+import Foundation
 import SwiftUI
 import MapKit
 import UIKit
 import EventKit
+import DeadSimpleCalendar
 
 struct ContentView: View {
     var body: some View {
@@ -47,9 +49,8 @@ struct ContentView: View {
                             
                     }*/
                     
-                    //Spacer()
                     
-                    NavigationLink(destination: CalendarView(), label: {
+                    NavigationLink(destination: YourDeadSimpleCalendarView (), label: {
                         Text("Calendar")
                                     .bold()
                                     .frame(width: 300, height: 100)
