@@ -31,10 +31,11 @@ struct MyClubs: Identifiable{
     //add more variables (club descriptions, club leader(first and last name), club contact phone, club contact email)
 }
 
-let clubs = [Club(ClubID: 0, ClubName: "Students seeking war"),
-             Club(ClubID: 1, ClubName: "Honor Roll Students")]
+let clubs = [Club(ClubID: 0, ClubName: "UC Chess Club"),
+             Club(ClubID: 1, ClubName: "UC Rowing Club Sport"),
+             Club(ClubID: 3, ClubName: "Esports @ UC")]
 
-let zachsclubs = [MyClubs(userid: 0, MemberOf: 1)]
+let zachsclubs = [MyClubs(userid: 0, MemberOf: 1), MyClubs(userid: 0, MemberOf: 3)]
 
 let num_clubs: Int = 2
 
@@ -74,7 +75,7 @@ struct ClubsView: View{
                            
             List(clubs){ club in
                 Text(club.ClubName)
-                Text(club.id.uuidString)
+                //Text(club.id.uuidString)
             }
             
             
@@ -101,31 +102,32 @@ struct ClubsView: View{
 struct MyClubsView: View{
     
     //trying to traverse array find matches between memberof on myclubs struct and clubID on club struct
-                 
+    
     var body: some View{
         
         Text("These are my clubs")
-        
-        /*List(zachsclubs){ myclubs in
-            Text(
+        VStack{
+            
+            List(zachsclubs){ myclubs in
+                Text(String(myclubs.MemberOf))
+                //Text(myclubs.id.uuidString)
                 
-                var i = 0
-                while i < clubs.count {
-                    if zachsclubs[0].MemberOf == clubs[i].ClubID {
-                        Text(clubs.ClubName[myclubs.MemberOf])
-                    }
-                    
-                }
+                /*var i = 0
+                 
+                 while i < clubs.count {
+                 if zachsclubs[].MemberOf == clubs[i].ClubID {
+                 Text(clubs.ClubName[zachsclubs[i].MemberOf])
+                 }
+                 }
+                 */
                 
                 
                 //String(myclubs.MemberOf)
-            
-            
-            )
-            Text(myclubs.id.uuidString)
-         */
-        //}
+                
+            }
+            //Text(myclubs.id.uuidString)
+        }
+        
     }
-    
 }//end my clubs view
 
