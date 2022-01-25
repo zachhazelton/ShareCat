@@ -1,0 +1,27 @@
+import SwiftUI
+import MapKit
+
+struct ContentView: {
+
+@State private var region: MKCoordinateRegion =
+MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 39.13379, longitude: -84.51660),
+span: MKCoordinateSpan(latitudeDelta: 0.004, longitudeDelta: 0.004))
+
+private var pointsOfInterest = [
+    AnnotatedItem(name: "First", coordinate: .init(latitude: 39.13379, longitude: -84.51660)),
+    AnnotatedItem(name: "Second", coordinate: .init(latitude: 39.13379, longitude: -85.51660)),
+    AnnotatedItem(name: "Third", coordinate: .init(latitude: 39.13379, longitude: -86.51660))
+    ]
+
+var body: some View {
+    Map(coordinateRegion: $region, annotationItems: pointsOfInterest) { 
+item in
+MapAnnotation(coordinate: item.coordinate) {
+    RoundedRectangle(cornerRadius: 5.0)
+        .stroke(Color.red, lineWidth: 4.0)
+        .frame(width: 30, height: 30)
+}
+}
+.edgesIgnoringSafeArea(.all)
+  }
+}
