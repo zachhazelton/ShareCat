@@ -126,6 +126,7 @@ struct ContentView_Previews: PreviewProvider {
 
 
 
+
 //Home button code for main menu
 /*struct Main_Menu: View {
     var home_button:
