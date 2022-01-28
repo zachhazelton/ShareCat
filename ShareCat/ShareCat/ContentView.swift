@@ -67,7 +67,7 @@ struct ContentView: View {
                             })
                     HStack{
                             NavigationLink(destination: MapView()
-                                            .edgesIgnoringSafeArea(.all), label: {
+                                            , label: {
                                 Text("Map")
                                     .bold()
                                     .frame(width: 150, height: 150 )
@@ -101,7 +101,6 @@ struct ContentView: View {
     }//end body
     
 }//end view
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
