@@ -61,19 +61,19 @@ struct ResourcesTwoView: View{
                 .background(Color.red)
                 .cornerRadius(15.0)
                 
+            Link("Learning Commons", destination: URL(string: "https://www.uc.edu/campus-life/learning-commons.html")!)
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .frame(width: 300, height: 30)
+                            .background(Color.red)
+                            .cornerRadius(15.0)
+                
             Link("Library", destination: URL(string: "https://online.uc.edu/student-resources/library/")!)
                     .font(.title)
                     .foregroundColor(.white)
                     .frame(width: 300, height: 30)
                     .background(Color.red)
                     .cornerRadius(15.0)
-                
-            Link("Learning Commons", destination: URL(string: "https://www.uc.edu/campus-life/learning-commons.html")!)
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .frame(width: 300, height: 30)
-                        .background(Color.red)
-                        .cornerRadius(15.0)
                 
             Link("Majors & Programs", destination: URL(string: "https://www.uc.edu/majors-programs/explore/majors.html")!)
                 .font(.title)
