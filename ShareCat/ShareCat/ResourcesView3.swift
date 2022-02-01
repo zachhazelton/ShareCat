@@ -1,8 +1,8 @@
 //
-//  ResourcesView.swift
+//  ResourcesView3.swift
 //  ShareCat
 //
-//  Created by Zachary Hazelton on 11/17/21.
+//  
 //
 
 import Foundation
@@ -12,7 +12,7 @@ import UIKit
 import EventKit
 
 
-struct ResourcesView: View{
+struct ResourcesView3: View{
     var body: some View{
         ZStack{
             Color.black.ignoresSafeArea()
@@ -26,66 +26,62 @@ struct ResourcesView: View{
                 .background(Color.white)
                 .cornerRadius(15.0)
                 
-            Link("AACRC", destination: URL(string: "https://www.uc.edu/campus-life/aacrc.html")!)
+            Link("Nightride", destination: URL(string: "https://www.uc.edu/about/publicsafety/services/night-ride.html")!)
                 .font(.title)
                 .foregroundColor(.white)
                 .frame(width: 300, height: 30)
                 .background(Color.red)
                 .cornerRadius(15.0)
                 
-            Link("Academic Calendar", destination: URL(string: "https://www.uc.edu/about/registrar/calendars.html")!)
-            .font(.title)
-            .foregroundColor(.white)
-            .frame(width: 300, height: 30)
-            .background(Color.red)
-            .cornerRadius(15.0)
-
-            
-            Link("Accessibility Resources", destination: URL(string: "https://www.uc.edu/campus-life/accessibility-resources.html")!)
-            .font(.title)
-            .foregroundColor(.white)
-            .frame(width: 300, height: 30)
-            .background(Color.red)
-            .cornerRadius(15.0)
-             
-            Link("Athletics", destination: URL(string: "https://gobearcats.com/index.aspx")!)
+            Link("One Stop", destination: URL(string: "https://onestop.uc.edu")!)
                 .font(.title)
                 .foregroundColor(.white)
                 .frame(width: 300, height: 30)
                 .background(Color.red)
                 .cornerRadius(15.0)
                 
-            Link("Bearcat Card", destination: URL(string: "https://www.uc.edu/bearcatcard.html")!)
+            Link("Public Safety", destination: URL(string: "https://www.uc.edu/about/publicsafety.html")!)
             .font(.title)
             .foregroundColor(.white)
             .frame(width: 300, height: 30)
             .background(Color.red)
             .cornerRadius(15.0)
+              
+            Link("Registrar's Office", destination: URL(string: "https://www.uc.edu/about/registrar.html")!)
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .frame(width: 300, height: 30)
+                    .background(Color.red)
+                    .cornerRadius(15.0)
                 
-            Link("Bearcat Guardian", destination: URL(string: "https://www.uc.edu/about/publicsafety/services/guardian-app.html")!)
+            Link("Resident Halls/Housing", destination: URL(string: "https://www.uc.edu/campus-life/housing/residential-experience/communities.html")!)
                 .font(.title)
                 .foregroundColor(.white)
                 .frame(width: 300, height: 30)
                 .background(Color.red)
                 .cornerRadius(15.0)
                 
-            Link("Bookstore", destination: URL(string: "https://www.bkstr.com/cincinnatistore/home")!)
-            .font(.title)
-            .foregroundColor(.white)
-            .frame(width: 300, height: 30)
-            .background(Color.red)
-            .cornerRadius(15.0)
-            
-            Link("Bursar's Office", destination: URL(string: "https://www.uc.edu/bursar.html")!)
+            Link("Student Government", destination: URL(string: "https://www.uc.edu/campus-life/student-government.html")!)
                 .font(.title)
                 .foregroundColor(.white)
                 .frame(width: 300, height: 30)
                 .background(Color.red)
                 .cornerRadius(15.0)
                 
+            Link("Student Wellness Center", destination: URL(string: "https://www.uc.edu/campus-life/wellness.html")!)
+            .font(.title)
+            .foregroundColor(.white)
+            .frame(width: 300, height: 30)
+            .background(Color.red)
+            .cornerRadius(15.0)
                 
-            
-    
+            Link("Testing Services", destination: URL(string: "https://www.uc.edu/campus-life/testing-services.html")!)
+            .font(.title)
+            .foregroundColor(.white)
+            .frame(width: 300, height: 30)
+            .background(Color.red)
+            .cornerRadius(15.0)
+        
                 HStack{
                     
                     NavigationLink(destination: ContentView(), label:  {
@@ -96,12 +92,11 @@ struct ResourcesView: View{
                                     .foregroundColor(.black)
                                     .cornerRadius(15.0)
                                 })
-                    
                     NavigationLink(destination: ResourcesView(), label:  {
                                 Text("1")
                                     .bold()
                                     .frame(width: 30, height: 30)
-                                    .background(Color.gray)
+                                    .background(Color.white)
                                     .foregroundColor(.black)
                                     .cornerRadius(15.0)
                                 })
@@ -117,16 +112,15 @@ struct ResourcesView: View{
                                 Text("3")
                                     .bold()
                                     .frame(width: 30, height: 30)
-                                    .background(Color.white)
+                                    .background(Color.gray)
                                     .foregroundColor(.black)
                                     .cornerRadius(15.0)
                                 })
                 }
             
-           
             
-
-        }
+            
+            }
             //.offset(y:-5)
         }
     }

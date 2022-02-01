@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FA8B62727A87BE3005E84C3 /* ResourcesTwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8B62627A87BE3005E84C3 /* ResourcesTwoView.swift */; };
+		2FA8B62927A8B888005E84C3 /* ResourcesView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8B62827A8B888005E84C3 /* ResourcesView3.swift */; };
 		560A07042720E85700D53B38 /* ShareCatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560A07032720E85700D53B38 /* ShareCatApp.swift */; };
 		560A07062720E85700D53B38 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560A07052720E85700D53B38 /* ContentView.swift */; };
 		560A07082720E85900D53B38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 560A07072720E85900D53B38 /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2FA8B62627A87BE3005E84C3 /* ResourcesTwoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesTwoView.swift; sourceTree = "<group>"; };
+		2FA8B62827A8B888005E84C3 /* ResourcesView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesView3.swift; sourceTree = "<group>"; };
 		560A07002720E85700D53B38 /* ShareCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		560A07032720E85700D53B38 /* ShareCatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCatApp.swift; sourceTree = "<group>"; };
 		560A07052720E85700D53B38 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 				56F565F32745E87D004C287C /* LoginView.swift */,
 				56F565EB27449E5B004C287C /* ClubsView.swift */,
 				56F565ED2745E7E0004C287C /* ResourcesView.swift */,
+				2FA8B62627A87BE3005E84C3 /* ResourcesTwoView.swift */,
+				2FA8B62827A8B888005E84C3 /* ResourcesView3.swift */,
 				56F565EF2745E81F004C287C /* MapView.swift */,
 				56F565F12745E853004C287C /* CalendarView.swift */,
 				56F565F92746989A004C287C /* LoginViewController.swift */,
@@ -293,6 +299,8 @@
 				56F565F22745E853004C287C /* CalendarView.swift in Sources */,
 				56F565FC274698B4004C287C /* LoginViewController.swift in Sources */,
 				56F565F02745E81F004C287C /* MapView.swift in Sources */,
+				2FA8B62927A8B888005E84C3 /* ResourcesView3.swift in Sources */,
+				2FA8B62727A87BE3005E84C3 /* ResourcesTwoView.swift in Sources */,
 				56F565EC27449E5B004C287C /* ClubsView.swift in Sources */,
 				560A07042720E85700D53B38 /* ShareCatApp.swift in Sources */,
 			);
