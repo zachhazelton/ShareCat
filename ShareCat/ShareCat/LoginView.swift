@@ -56,7 +56,8 @@ struct LoginView: View{
                             else{
                                 authenticationfailed = true
                             }*/
-                            if (send_login_request(name: username, user_password: password)){
+                            if (send_login_request(name: username, user_password: password) != 0){
+                                //print("authenticated")
                                 self.authenticated = true
                             }
                             else{
@@ -97,54 +98,55 @@ struct LoginView: View{
     
 }
 
-func send_login_request(name: String, user_password: String ) -> Bool{
-    
-    
-    // Prepare URL
+func send_login_request(name: String, user_password: String ) -> Int{
      
-    let url = URL(string: "ec2-18-219-134-8.us-east-2.compute.amazonaws.com/Login.php")!
-        //guard let Url = Url
-        //else { return }
-     
-    // HTTP Request Parameters which will be sent in HTTP Request Body
-     
-    let parameters: [String: Any] = [
-            "request": [
-                    "name" : name,
-                    "password": user_password
-            ]
-        ]
-    
-    // Prepare URL Request Object
+    guard let url = URL(string: "http://ec2-18-219-134-8.us-east-2.compute.amazonaws.com/Login.php") else { return 0
+        
+    }
+    print("Sending post request...")
     
     var request = URLRequest(url: url)
+    
     request.httpMethod = "POST"
-    request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
-    guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
-        //return is placeholder
-        return true
-    }
     
-    // Set HTTP Request Body
+    let headers = [
+      "content-type": "application/x-www-form-urlencoded",
+      "cache-control": "no-cache",
+      "postman-token": "c0dd01f0-da22-cd95-5fb2-aed10a3bf6cd"
+    ]
     
-    request.httpBody = httpBody
-    request.timeoutInterval = 20
+    request.allHTTPHeaderFields = headers
+    var postData = "name=\(name)".data(using: String.Encoding.utf8)!
     
-    // Perform HTTP Request
-    let session = URLSession.shared
-    session.dataTask(with: request) { (data, response, error) in
-        if let response = response {
-            print(response)
+    postData.append("&password=\(user_password)".data(using: String.Encoding.utf8)!)
+    
+    request.httpBody = postData as Data
+    
+    let task = URLSession.shared.dataTask(with: request) { data, _, error in
+        
+        guard let data = data, error == nil else {
+            return
         }
-        if let data = data {
             do {
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-                print(json)
+                let response = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                print("SUCCESS: \(response)")
+                //temp = response
             } catch {
                 print(error)
             }
+            
         }
-    }.resume()
-    //return is placeholder
-    return true;
+    
+    task.resume()
+    
+    //return get_user_id(response: temp as! String)
+    //Return userID
+    return 1;
+}
+
+
+func get_user_id(response: String) -> Int{
+    
+    return 1;
+    
 }

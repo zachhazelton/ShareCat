@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
 //        super.init(nibName: nil, bundle: nil)
 //    }
 //
+    //print("hello")
     override func loadView() {
         super.loadView()
         view = myview
