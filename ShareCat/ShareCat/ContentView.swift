@@ -19,7 +19,7 @@ struct ContentView: View {
             
             
             ZStack {
-                Color.gray.ignoresSafeArea()
+                Color.white.ignoresSafeArea()
         //VStack{
                 //NavigationLink(destination: Text("Calendar Page")) {
                     //Text("Calendar")
@@ -49,20 +49,28 @@ struct ContentView: View {
                             
                     }*/
                     
+                    Text("ShareCat")
+                        .bold()
+                        .font(.system(size: 30))
+                        .frame(width: 300, height: 75)
+                        .foregroundColor(.gray)
+                        .background(Color.white)
+                        .cornerRadius(15.0)
                     
                     NavigationLink(destination: YourDeadSimpleCalendarView (), label: {
                         Text("Calendar")
                                     .bold()
-                                    .frame(width: 300, height: 100)
+                                    .frame(width: 300, height: 125)
                                     .background(Color.red)
                                     .foregroundColor(.white)
                                     .cornerRadius(15.0)
                             })
+                    HStack{
                             NavigationLink(destination: MapView()
                                             .edgesIgnoringSafeArea(.all), label: {
                                 Text("Map")
                                     .bold()
-                                    .frame(width: 300, height: 100 )
+                                    .frame(width: 150, height: 150 )
                                     .background(Color.black)
                                     .foregroundColor(.white)
                                     .cornerRadius(15.0)                            })
@@ -70,18 +78,18 @@ struct ContentView: View {
                     NavigationLink(destination: ClubsView(), label:  {
                                 Text("Clubs")
                                     .bold()
-                                    .frame(width: 300, height: 100)
+                                    .frame(width: 150, height: 150)
                                     .background(Color.black)
                                     .foregroundColor(.white)
                                     .cornerRadius(15.0)
                             
                             })
                     
-                    
+                    }
                         NavigationLink(destination: ResourcesView(), label:  {
                                 Text("Campus Resources")
                                     .bold()
-                                    .frame(width: 300, height: 100)
+                                    .frame(width: 300, height: 125)
                                     .background(Color.red)
                                     .foregroundColor(.white)
                                     .cornerRadius(15.0)             })
