@@ -130,6 +130,15 @@ func send_login_request(name: String, user_password: String ) -> Int{
             do {
                 let response = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
                 print("SUCCESS: \(response)")
+                struct Users: Decodable {
+                    let UserID: Int
+                }
+                //parsing the JSON to pull userID into struct (defined above)
+                do {let temp = try JSONDecoder().decode(Users.self, from: data)
+                    let gameData = temp.UserID
+                    print("user id is: \(gameData)")
+                    
+                } catch { print(error) }
                 //temp = response
             } catch {
                 print(error)
