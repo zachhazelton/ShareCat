@@ -24,9 +24,11 @@ Spacer()
 locationsPreviewStack
 }
 }
+  .sheet(item: $vm.sheetLocation, onDismiss: nil) { location in
+      LocationDetailView(location: location)
 }
 }
-
+}
 
 
 struct LocationsView_Previews: PreviewProvider {

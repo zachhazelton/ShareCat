@@ -60,8 +60,9 @@ struct ContentView: View {
                         .background(Color.white)
                         .cornerRadius(15.0)
                     
-                    NavigationLink(destination: YourDeadSimpleCalendarView (), label: {
-                        Text("Calendar")
+                    NavigationLink(destination: NotesView(),
+                                   label: {
+                        Text("Notes")
                             .bold()
                             .frame(width: 375, height: 187.5)
                             .background(Color.red)
