@@ -26,7 +26,7 @@ struct LoginView: View{
     
     var body: some View{
         
-        
+        var user_id = 0
         if !authenticated{
             ZStack{
                 Color.gray.ignoresSafeArea()
@@ -56,7 +56,8 @@ struct LoginView: View{
                             else{
                                 authenticationfailed = true
                             }*/
-                            if (send_login_request(name: username, user_password: password) != 0){
+                            user_id = send_login_request(name: username, user_password: password)
+                            if (user_id) != 0{
                                 //print("authenticated")
                                 self.authenticated = true
                             }
@@ -98,6 +99,9 @@ struct LoginView: View{
     
 }
 
+
+
+
 func send_login_request(name: String, user_password: String ) -> Int{
      
     guard let url = URL(string: "http://ec2-18-219-134-8.us-east-2.compute.amazonaws.com/Login.php") else { return 0
@@ -128,18 +132,19 @@ func send_login_request(name: String, user_password: String ) -> Int{
             return
         }
             do {
+                
                 let response = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                print("SUCCESS: \(response)")
-                struct Users: Decodable {
-                    let UserID: Int
+                if let response = response as? [String: Any] {
+                    print(response)
+                    //print("UserID is: \(response[])")
+                    let posts = response["UserID"] as? [[String: Any]] ?? []
+                    print(posts)
                 }
-                //parsing the JSON to pull userID into struct (defined above)
-                do {let temp = try JSONDecoder().decode(Users.self, from: data)
-                    let gameData = temp.UserID
-                    print("user id is: \(gameData)")
-                    
-                } catch { print(error) }
-                //temp = response
+               
+                struct Users: Decodable {
+                    var UserID: Int
+                }
+                
             } catch {
                 print(error)
             }
@@ -147,15 +152,15 @@ func send_login_request(name: String, user_password: String ) -> Int{
         }
     
     task.resume()
-    
-    //return get_user_id(response: temp as! String)
-    //Return userID
     return 1;
 }
 
 
-func get_user_id(response: String) -> Int{
-    
-    return 1;
+func get_user_id(json: Data) -> Int{
+    let decoder = JSONDecoder()
+    if let jsonPetitions = try? decoder.decode(Data.self, from: json) {
+        print("USERID IS \(jsonPetitions)")
+    }
+    return -1;
     
 }
