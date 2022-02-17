@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct ShareCatApp: App {
+    
+    @StateObject private var vm = LocationsViewModel()
+    
     var body: some Scene {
         WindowGroup {
           LoginView()

@@ -13,6 +13,9 @@ import EventKit
 import DeadSimpleCalendar
 
 struct ContentView: View {
+    
+    @StateObject private var vm = LocationsViewModel()
+    
     var body: some View {
         
         NavigationView {
@@ -66,8 +69,8 @@ struct ContentView: View {
                                     .cornerRadius(15.0)
                             })
                     HStack{
-                            NavigationLink(destination: MapView()
-                                            , label: {
+                            NavigationLink(destination: LocationsView()
+                                            .environmentObject(vm)                                            , label: {
                                 Text("Map")
                                     .bold()
                                     .frame(width: 150, height: 150 )
