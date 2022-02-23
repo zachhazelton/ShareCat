@@ -29,13 +29,16 @@ struct LoginView: View{
         
         if !authenticated{
             ZStack{
-                Color.gray.ignoresSafeArea()
+                VStack{
+                Image("Logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width:375 , height: 300)
+            
+                }
                 VStack{
                     
-                    Text("Login")
-                        .font(.system(size: 64, weight: .semibold))
-                        .foregroundColor(.black)
-                        .offset(y:-60)
+
                     HStack {
                         Image(systemName: "envelope")
                             .foregroundColor(.black)
@@ -85,7 +88,7 @@ struct LoginView: View{
                         
                     }
                 }
-            }
+        }
             
             
         }//end if
