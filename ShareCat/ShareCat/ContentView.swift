@@ -69,7 +69,9 @@ struct ContentView: View {
                             .cornerRadius(15.0)
                     })
                     HStack{
-                        NavigationLink(destination: MapView()
+                        NavigationLink(destination: LocationsView()
+                                        .environmentObject(vm)
+                                     
                                        , label: {
                             Text("Map")
                                 .bold()
