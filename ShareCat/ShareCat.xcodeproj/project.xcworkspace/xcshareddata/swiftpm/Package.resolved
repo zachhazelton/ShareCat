@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DeadSimpleCalendar",
+        "repositoryURL": "https://github.com/selfsk/DeadSimpleCalendar.git",
+        "state": {
+          "branch": "master",
+          "revision": "f5de94c785ac3622c15b3418bc5f26b51fd03046",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

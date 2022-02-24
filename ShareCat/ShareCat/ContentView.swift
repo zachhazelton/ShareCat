@@ -55,47 +55,49 @@ struct ContentView: View {
                     Text("ShareCat")
                         .bold()
                         .font(.system(size: 30))
-                        .frame(width: 300, height: 75)
+                        .frame(width: 375, height: 75)
                         .foregroundColor(.gray)
                         .background(Color.white)
                         .cornerRadius(15.0)
                     
                     NavigationLink(destination: YourDeadSimpleCalendarView (), label: {
                         Text("Calendar")
-                                    .bold()
-                                    .frame(width: 300, height: 125)
-                                    .background(Color.red)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(15.0)
-                            })
+                            .bold()
+                            .frame(width: 375, height: 187.5)
+                            .background(Color.red)
+                            .foregroundColor(.white)
+                            .cornerRadius(15.0)
+                    })
                     HStack{
-                            NavigationLink(destination: LocationsView()
-                                            .environmentObject(vm)                                            , label: {
-                                Text("Map")
-                                    .bold()
-                                    .frame(width: 150, height: 150 )
-                                    .background(Color.black)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(15.0)                            })
-                           
-                    NavigationLink(destination: ClubsView(), label:  {
-                                Text("Clubs")
-                                    .bold()
-                                    .frame(width: 150, height: 150)
-                                    .background(Color.black)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(15.0)
+                        NavigationLink(destination: MapView()
+                                       , label: {
+                            Text("Map")
+                                .bold()
+                                .frame(width: 187.5, height: 187.5 )
+                                .background(Color.black)
+                                .foregroundColor(.white)
+                            .cornerRadius(15.0)                            })
+                        
+                        NavigationLink(destination: ClubsView(), label:  {
+                            Text("Clubs")
+                                .bold()
+                                .frame(width: 187.5, height: 187.5)
+                                .background(Color.black)
+                                .foregroundColor(.white)
+                                .cornerRadius(15.0)
                             
-                            })
-                    
+                        })
+                        
                     }
-                        NavigationLink(destination: ResourcesView(), label:  {
-                                Text("Campus Resources")
-                                    .bold()
-                                    .frame(width: 300, height: 125)
-                                    .background(Color.red)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(15.0)             })
+                    NavigationLink(destination: ResourcesView(), label:  {
+                        Text("Campus Resources")
+                            .bold()
+                            .frame(width: 375, height: 187.5)
+                            .background(Color.red)
+                            .foregroundColor(.white)
+                        .cornerRadius(15.0)             })
+
+
                         
                         }//end second v stack
             } //end z stack
