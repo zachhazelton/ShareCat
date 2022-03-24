@@ -87,14 +87,14 @@ struct ResourcesTwoView: View{
         
                 HStack{
                     
-                    NavigationLink(destination: ContentView(), label:  {
+                   /* NavigationLink(destination: ContentView(), label:  {
                                 Text("Home")
                                     .bold()
                                     .frame(width: 50, height: 30)
                                     .background(Color.white)
                                     .foregroundColor(.black)
                                     .cornerRadius(15.0)
-                                })
+                                })*/
                     
                     NavigationLink(destination: ResourcesView(), label:  {
                                 Text("1")

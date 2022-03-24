@@ -29,17 +29,30 @@ struct LoginView: View{
         var user_id = 0
         if !authenticated{
             ZStack{
+       
                 VStack{
-                Image("Logo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width:375 , height: 300)
+                    VStack{
+                    Image("Logo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width:375 , height: 300)
+                
+                    }
+                    VStack{
+                        Text("back")
+                            .foregroundColor(.black)
+                            .padding()
+                            .frame(width: 1, height: 70)
+                            .background(Color.white)
+                            .cornerRadius(15.0)
+                            .offset(y:20)
+                    }
             
-                }
-                VStack{
-                    
-
+                    VStack{
+                        
+                        
                     HStack {
+                        
                         Image(systemName: "envelope")
                             .foregroundColor(.black)
                         TextField("Username", text: $username)
@@ -48,6 +61,7 @@ struct LoginView: View{
                     HStack {
                         Image(systemName: "lock")
                         SecureField("Password", text: $password)
+                    }
                     }
                     //Spacer()
                     HStack{

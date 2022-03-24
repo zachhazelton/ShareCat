@@ -52,13 +52,21 @@ struct ContentView: View {
                             
                     }*/
                     
-                    Text("ShareCat")
+                    VStack{
+                    Image("MainV")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width:355 , height: 74)
+                
+                    }
+                    
+                    /*Text("ShareCat")
                         .bold()
                         .font(.system(size: 30))
                         .frame(width: 375, height: 75)
                         .foregroundColor(.gray)
                         .background(Color.white)
-                        .cornerRadius(15.0)
+                        .cornerRadius(15.0)*/
                     
                     NavigationLink(destination: NotesView(),
                                    label: {
