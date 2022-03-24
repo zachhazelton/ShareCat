@@ -15,7 +15,7 @@ class LocationsDataService {
             name: "Baldwin Hall",
             cityName: "Cincinnati",
             coordinates: CLLocationCoordinate2D(latitude: 39.1328, longitude: -84.5166),
-            description: "The Colosseum is an oval amphitheatre in the centre of the city of Rome, Italy, just east of the Roman Forum. It is the largest ancient amphitheatre ever built, and is still the largest standing amphitheatre in the world today, despite its age.",
+            description: "Baldwin Hall is situated at the heart of Schneider Quad, formerly known as Baldwin Hall, adorned with beautiful white columns at its entrance.  It was the first building constructed for the Engineering Department at the University of Cincinnati.  Named for benefactor, Frances H. Baldwin, it was built in 1911 for the sole purpose of being utilized by the engineering department.",
             imageNames: [
                 "rome-colosseum-1",
                 "rome-colosseum-2",
@@ -26,7 +26,7 @@ class LocationsDataService {
             name: "Tangeman University Center",
             cityName: "Cincinnati",
             coordinates: CLLocationCoordinate2D(latitude: 39.1320, longitude: -84.5172),
-            description: "The Pantheon is a former Roman temple and since the year 609 a Catholic church, in Rome, Italy, on the site of an earlier temple commissioned by Marcus Agrippa during the reign of Augustus.",
+            description: "In the center of West Campus is Tangeman University Center.  Architects Harry Hake and Harry Hake Jr. built TUC in 1937 in response to a growing student population. The building was constructed with a Georgian Colonial style and highlighted by the large columns at the entrance and the clock tower.",
             imageNames: [
                 "rome-pantheon-1",
                 "rome-pantheon-2",
@@ -37,7 +37,7 @@ class LocationsDataService {
             name: "Campus Recreation Center",
             cityName: "Cincinnati",
             coordinates: CLLocationCoordinate2D(latitude: 39.1324, longitude: -84.5154),
-            description: "The Trevi Fountain is a fountain in the Trevi district in Rome, Italy, designed by Italian architect Nicola Salvi and completed by Giuseppe Pannini and several others. Standing 26.3 metres high and 49.15 metres wide, it is the largest Baroque fountain in the city and one of the most famous fountains in the world.",
+            description: "Campus Recreation Center Hall is perfect for students that desire productivity and focus in their day-to-day life.  It is located on MainStreet connected to the Rec Center and CenterCourt dining hall, making it the perfect environment for motivation. Being so close to the Rec inspires students to take advantage of its health benefits and helps them get involved in the countless events, activities and programs that our Rec Center has to offer.",
             imageNames: [
                 "rome-trevifountain-1",
                 "rome-trevifountain-2",
