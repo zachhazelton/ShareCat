@@ -11,6 +11,7 @@ import SwiftUI
 struct ShareCatApp: App {
     
     @StateObject private var vm = LocationsViewModel()
+    //@StateObject clubs: [String]
     
     var body: some Scene {
         WindowGroup {

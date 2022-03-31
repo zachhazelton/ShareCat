@@ -10,48 +10,59 @@ import SwiftUI
 import MapKit
 import UIKit
 import EventKit
+//import XCTest
 
 
 
 //Stores data for a single club, may need to add more variables, an array of clubs will be initialized to store all clubs
 struct Club: Identifiable{
     var id = UUID()
+    var clubid: Int
     //may not need this, could be replaced by uuid id, use id.uuidstring to convert club.id to string
-    let ClubID: Int
-    let ClubName: String
+    var name : String
+    var location: String
+    var time: String
+    var leader: String
     //add more variables (club descriptions, club leader(first and last name), club contact phone, club contact email)
 }
 
-struct MyClubs: Identifiable{
-    var id = UUID()
-    let userid: Int
-    //may not need this, could be replaced by uuid id, use id.uuidstring to convert club.id to string
-    let MemberOf: Int
-    //let ClubName: String
-    //add more variables (club descriptions, club leader(first and last name), club contact phone, club contact email)
-}
 
-let clubs = [Club(ClubID: 0, ClubName: "UC Chess Club"),
-             Club(ClubID: 1, ClubName: "UC Rowing Club Sport"),
-             Club(ClubID: 3, ClubName: "Esports @ UC")]
 
-let zachsclubs = [MyClubs(userid: 0, MemberOf: 1), MyClubs(userid: 0, MemberOf: 3)]
+//var clublist: URLSessionTask?
+//var error: URLSessionTask?
 
-let num_clubs: Int = 2
+/*func getclubsarray(clubslist: URLSessionTask) ->Void{
+    getclubs() {(clubslist, error) -> Void in
+        if let clubslist = clubslist {
+            print("First club name is \(clubslist[0])")
+        }
+        
+    }
+    
+}*/
 
 
 struct ClubsView: View{
     
-    let allclubs = getclubs()
+    //var allclubs: [String]
+    @State public var allclubs: [Club] = []
+
     var body: some View{
         //Text("This is the clubs view")
         //Text("This is the clubs view")
-        
         //retreive data from database here
         
         
         //let uuid = NSUUID().uuidString
         //getclubs()
+        //var myhandler = CommonHandler()
+        
+        //let totalclubs = getclubsarray(clubslist: getclubs(completionHandler: myhandler))
+        
+        
+        //let allclubs = mydata.string
+        //print(string[1])
+        
         VStack{
             
             Text("Clubs")
@@ -73,19 +84,51 @@ struct ClubsView: View{
                 
             })//end navlink
            
-                           
-            List(clubs){ club in
-                Text(club.ClubName)
+            let mydata = getclubs(completionHandler: { (string, error) -> Void in
+                if let string = string {
+                    //here is the list of substrings now need to build a table with this
+                    print(string[0])
+                    let length = string.count
+                    print("length is: \(length)")
+                    //var allclubs: [Club] = []
+                    var i: Int = 0
+                    while(i < string.count-1){
+                        /*allclubs[i].name = string[i]
+                        print("Name is: \(allclubs[i].name)")
+                        allclubs[i].location = string[i+1]
+                        print(allclubs[i].location)
+                        allclubs[i].time = string[i+2]
+                        print(allclubs[i].time)
+                        allclubs[i].leader = string[i+3]
+                        print(allclubs[i].leader)
+                        allclubs[i].clubid = Int(string[i+4]) ?? 0
+                        print(allclubs[i].clubid)*/
+                        allclubs.append(Club(clubid: Int(string[i+4]) ?? 0, name: string[i], location: string[i+1], time: string[i+2], leader: string[i+3]))
+                        i+=5
+                    }
+                    //allclubs = string
+                    
+                    List {
+                        var x: Int = 0
+                        Text(allclubs[x].name)
+                        //Text(club.id.uuidString)
+                    }
+                }
+            })//end of let
+            
+            /*List {
+                var x: Int = 0
+                Text(allclubs[x].name)
                 //Text(club.id.uuidString)
             }
-            
-            
+            */
         }//end vstack
         
-        
-        
+         
     }//end body
+            
 }//end view
+                              
 
 
 @MainActor class UISearchBar: UIView{
@@ -98,7 +141,7 @@ struct ClubsView: View{
 
 }
 
-func getclubs() -> String{
+func getclubs(completionHandler: @escaping ([String]?, NSError?) -> Void ) -> URLSessionTask {
     let url = URL(string: "http://ec2-18-219-134-8.us-east-2.compute.amazonaws.com/GetClubs_New.php")!
     
     var request = URLRequest(url: url)
@@ -120,8 +163,10 @@ func getclubs() -> String{
             print(myuser!)
             
             //need to return this array of substrings
+            //let removenewlines = myuser!.replacingOccurrences(of: "\n", with: ",")
             let components = myuser!.components(separatedBy: ",")
             print(components[0])
+            completionHandler(components, nil)
     //return(userid!)
         //print([User].id
     //let res = response as? HTTPURLResponse;
@@ -140,7 +185,9 @@ func getclubs() -> String{
 //return userid;
     }
     task.resume()
-    return ""
+    
+    //return completionHandler(nil,nil)
+    return task
 }
 
 struct MyClubsView: View{
@@ -152,8 +199,8 @@ struct MyClubsView: View{
         Text("These are my clubs")
         VStack{
             
-            List(zachsclubs){ myclubs in
-                Text(String(myclubs.MemberOf))
+            /*List(zachsclubs){ myclubs in
+                Text(String(myclubs.MemberOf))*/
                 //Text(myclubs.id.uuidString)
                 
                 /*var i = 0
@@ -172,6 +219,6 @@ struct MyClubsView: View{
             //Text(myclubs.id.uuidString)
         }
         
-    }
+    
 }//end my clubs view
 
