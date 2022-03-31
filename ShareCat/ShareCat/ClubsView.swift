@@ -116,9 +116,12 @@ func getclubs() -> String{
         
         else if let data = data{
             let myuser = String(data: data, encoding: .utf8)
-            //let trimmed = myuser?.components(separatedBy: .whitespacesAndNewlines).joined()
-            //let userid = Int(trimmed!)
+           //this value contains the whole string of clubs, with information seperated by commas
             print(myuser!)
+            
+            //need to return this array of substrings
+            let components = myuser!.components(separatedBy: ",")
+            print(components[0])
     //return(userid!)
         //print([User].id
     //let res = response as? HTTPURLResponse;
@@ -128,6 +131,8 @@ func getclubs() -> String{
             print("error")
         }
 
+        
+        
     //print(userid)
 
     
