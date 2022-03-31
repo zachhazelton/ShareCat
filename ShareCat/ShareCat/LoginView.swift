@@ -74,6 +74,9 @@ struct LoginView: View{
                                 authenticationfailed = true
                             }*/
                             user_id = send_login_request(name: username, user_password: password)
+                            //remove below line: for test only
+                            user_id = 1
+                            
                             if (user_id) != 0{
                                 //print("authenticated")
                                 self.authenticated = true
@@ -116,9 +119,58 @@ struct LoginView: View{
     
 }
 
+struct User: Decodable {
+    
+    var id: String
+}
 
+func send_login_request(name: String, user_password: String) -> Int{
+    let userid = 0;
+    let url = URL(string: "http://ec2-18-219-134-8.us-east-2.compute.amazonaws.com/Login_New.php?name=\(name)&password=\(user_password)")!
+    //let url = URL(string: "http://ec2-18-219-134-8.us-east-2.compute.amazonaws.com/Login_New.php?name=zach.hazelton&password=password")!
+    var request = URLRequest(url: url)
+    
+    request.httpMethod = "GET"
+    //request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        print("Sending request...")
+        if let error = error {
+            print("Error \(error)")
+            return
+            
+        }
+        else if let data = data{
+            //print("Inside if statement")
+            
+            //print(data);
+            //let myuser = try? JSONDecoder().decode([User].self, from: data)
+            let myuser = String(data: data, encoding: .utf8)
+            let trimmed = myuser?.components(separatedBy: .whitespacesAndNewlines).joined()
+            //print("UserID:\(trimmed ?? "0").")
+            
+            
+            //now need to convert myuser string to value of type int
+            let userid = Int(trimmed!)
+            print(userid!)
+            //return(userid!)
+                //print([User].id
+            //let res = response as? HTTPURLResponse;
+            //print("res is \(res)")
+        }
+        else {
+            print("error")
+        }
+        }
+    print(userid)
 
+    task.resume()
+    //print(userid)
+    return userid;
+    
+}
 
+/*
 func send_login_request(name: String, user_password: String ) -> Int{
      
     guard let url = URL(string: "http://ec2-18-219-134-8.us-east-2.compute.amazonaws.com/Login.php") else { return 0
@@ -181,3 +233,4 @@ func get_user_id(json: Data) -> Int{
     return -1;
     
 }
+ */

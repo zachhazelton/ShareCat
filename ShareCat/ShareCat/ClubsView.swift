@@ -42,7 +42,7 @@ let num_clubs: Int = 2
 
 struct ClubsView: View{
     
-    
+    let allclubs = getclubs()
     var body: some View{
         //Text("This is the clubs view")
         //Text("This is the clubs view")
@@ -51,6 +51,7 @@ struct ClubsView: View{
         
         
         //let uuid = NSUUID().uuidString
+        //getclubs()
         VStack{
             
             Text("Clubs")
@@ -97,7 +98,45 @@ struct ClubsView: View{
 
 }
 
+func getclubs() -> String{
+    let url = URL(string: "http://ec2-18-219-134-8.us-east-2.compute.amazonaws.com/GetClubs_New.php")!
+    
+    var request = URLRequest(url: url)
+    
+    request.httpMethod = "GET"
+    //request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        print("Sending request...")
+        if let error = error {
+            print("Error \(error)")
+            return
+            
+        }
+        
+        else if let data = data{
+            let myuser = String(data: data, encoding: .utf8)
+            //let trimmed = myuser?.components(separatedBy: .whitespacesAndNewlines).joined()
+            //let userid = Int(trimmed!)
+            print(myuser!)
+    //return(userid!)
+        //print([User].id
+    //let res = response as? HTTPURLResponse;
+    //print("res is \(res)")
+        }
+        else{
+            print("error")
+        }
 
+    //print(userid)
+
+    
+//print(userid)
+//return userid;
+    }
+    task.resume()
+    return ""
+}
 
 struct MyClubsView: View{
     
