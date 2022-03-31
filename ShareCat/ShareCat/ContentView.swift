@@ -16,7 +16,6 @@ struct ContentView: View {
     
     @StateObject private var vm = LocationsViewModel()
     
-    
     var body: some View {
         
         NavigationView {

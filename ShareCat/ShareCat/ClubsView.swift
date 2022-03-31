@@ -44,37 +44,27 @@ struct Club: Identifiable{
 
 struct ClubsView: View{
     
-    //var allclubs: [String]
-    @State public var allclubs: [Club] = []
 
+    @State public var allclubs: [Club] = []
+    @State private var searchText = ""
+  
+                                          
     var body: some View{
-        //Text("This is the clubs view")
-        //Text("This is the clubs view")
-        //retreive data from database here
-        
-        
-        //let uuid = NSUUID().uuidString
-        //getclubs()
-        //var myhandler = CommonHandler()
-        
-        //let totalclubs = getclubsarray(clubslist: getclubs(completionHandler: myhandler))
-        
-        
-        //let allclubs = mydata.string
-        //print(string[1])
-        
+    
         VStack{
             
-            Text("Clubs")
+            /*Text("Clubs")
                 //.bold()
                 .font(.system(size: 30))
                 .foregroundColor(.white)
                 .frame(width: 300, height: 55)
                 .background(Color.red)
                 .cornerRadius(15.0)
-                .offset(y: -20)
+                .offset(y: -20)*/
             
-            NavigationLink(destination: MyClubsView(), label: {
+            
+        
+            /*NavigationLink(destination: MyClubsView(), label: {
                 Text("My Clubs")
                     .font(.title)
                     .foregroundColor(.white)
@@ -82,7 +72,7 @@ struct ClubsView: View{
                     .background(Color.red)
                     .cornerRadius(15.0)
                 
-            })//end navlink
+            })//end navlink*/
            
             let mydata = getclubs(completionHandler: { (string, error) -> Void in
                 if let string = string {
@@ -108,26 +98,65 @@ struct ClubsView: View{
                     }
                     //allclubs = string
                     
-                    List {
-                        var x: Int = 0
-                        Text(allclubs[x].name)
-                        //Text(club.id.uuidString)
-                    }
+                    
+                    //for presentation demo only: needs fixed
+                    
                 }
-            })//end of let
+            })//end of le
             
-            /*List {
-                var x: Int = 0
-                Text(allclubs[x].name)
-                //Text(club.id.uuidString)
+            
+                            
+            List {
+                Group{
+                Text("Club Name: Chess Club")
+                    .listRowBackground(Color.red)
+                Text("Location: Evans Hall 301")
+                Text("Meeting Time: 7PM W/F")
+                Text("Contact Info: leader@mail.uc.edu")
+                Text("Club Name: Esports")
+                    .listRowBackground(Color.red)
+                Text("Location: Rhodes Hall 301")
+                Text("Meeting Time: 8PM M/W")
+                Text("Contact Info: esportsleader@mail.uc.edu")
+                Text("Club Name: IEEE")
+                    .listRowBackground(Color.red)
+                Text("Location: Rhodes Hall 105")
+                }
+                
+                
+           
+                Text("Meeting Time: 6PM T/TH")
+                Text("Contact Info: execieee@gmail.com")
+                Text("Club Name: Bearcat Electric Vehicle")
+                    .listRowBackground(Color.red)
+                Text("Location: Evans Hall 104")
+                Text("Meeting Time: 8PM W")
+                Text("Contact Info: bevleader@mail.uc.edu")
+                }
+            .searchable(text: $searchText){
+                
+                
+                
             }
-            */
+                
+                
+                
+                
+                //Text("Rhodes Hall 201")
+            
+                //var x: Int = 0
+                //Text(allclubs[x].name)
+                
+            }
+            
         }//end vstack
+    
+    
         
          
     }//end body
             
-}//end view
+//end view
                               
 
 
